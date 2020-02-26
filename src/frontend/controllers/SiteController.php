@@ -27,6 +27,13 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+
+        Yii::$app->vk->pool();
+        Yii::$app->vk->processBids();
+        Yii::$app->vk->winners();
+
+        exit;
+
         return $this->render('index');
     }
 

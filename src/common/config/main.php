@@ -1,4 +1,7 @@
 <?php
+
+use common\components\Vk;
+
 return [
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
@@ -17,6 +20,7 @@ return [
         'cache' => [
             'class' => YII_ENV_PROD ? 'yii\caching\FileCache' : 'yii\caching\DummyCache',
         ],
+        'vk' => Vk::class,
         'db' => [
             'class' => 'yii\db\Connection',
             'dsn' => getenv('DB_DSN'),

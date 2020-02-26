@@ -38,6 +38,8 @@ AppAsset::register($this);
 
     $menuItems = [
         ['label' => 'Home', 'url' => ['/site/index']],
+        ['label' => 'Аукционы', 'url' => ['/auction/index']],
+        ['label' => 'Ставки', 'url' => ['/bid/index']],
     ];
 
     echo Nav::widget([
