@@ -112,13 +112,17 @@ class Vk extends Component
 
     private function sendCommentary($postId, $replyToComment, $message, $guid = null)
     {
-        $this->callMethod('wall.createComment', [
-            'owner_id' => -$this->groupId,
-            'post_id' => $postId,
-            'message' => $message,
-            'reply_to_comment' => $replyToComment,
-            'guid' => $guid,
-        ]);
+        try {
+            $this->callMethod('wall.createComment', [
+                'owner_id' => -$this->groupId,
+                'post_id' => $postId,
+                'message' => $message,
+                'reply_to_comment' => $replyToComment,
+                'guid' => $guid,
+            ]);
+        } catch (\Throwable $e) {
+
+        }
     }
 
     private function saveTs($value)
